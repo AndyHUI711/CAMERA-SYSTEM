@@ -1386,6 +1386,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         MessageBox(
             self.closeButton, title='WARNING！', text='ALL PARAMETERS WILL BE RESET', time=2000, auto=True).exec_()
         self.statistic_msg('RESET!!!')
+        self.resultWidget.setStyleSheet("background-color: rgba(12, 28, 77, 0)")
     def search_pt(self):
         pt_list = os.listdir('./pt')
         pt_list = [file for file in pt_list if file.endswith('.pt')]
@@ -1570,6 +1571,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.det_thread.jump_out = True
         self.out_video.clear()
         self.raw_video.clear()
+        self.resultWidget.setStyleSheet("background-color: rgba(12, 28, 77, 0)")
     def mousePressEvent(self, event):
         self.m_Position = event.pos()
         if event.button() == Qt.LeftButton:
